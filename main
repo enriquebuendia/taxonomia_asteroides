@@ -6,14 +6,17 @@ Created on Thu Aug 29 00:06:32 2019
 """
 
 from os import path
-
+from tools import interpolacion, iterpolacion_demeo
+import numpy as np
 script_dir = path.dirname(__file__) #<-- absolute dir the script is in
 
 espectro = input('Nombre del archivo: ')
 abs_file_path = path.join(script_dir, 'espectro_txt\\' + espectro)
 txt = open(abs_file_path,'r')
-espectro_txt = pd.read_csv(txt,header=None,delim_whitespace=True)
+espectro_txt = pd.read_csv(txt,header=None,delim_whitespace=True) ### El archivo no debe tener encabezados, y el delimitador debe se espacio en blanco
 txt.close()
 
-flujo = espectro_txt.iloc[:,1];flujo = flujo.to_numpy() ### se carga el flujo
-LO = espectro_txt.iloc[:,0];LO = LO.to_numpy() ### se carga la longitud de onda
+espec_inter = interpolacion(espectro_txt) ### interpolamos nuestro espectro para tenerlo en las mismas
+espec_demeo = interpolacion_demeo(espec_inter)
+demeo_tax = disteuc_demeo(espec_demeo)
+b&b = disteuc_b&b(espec_inter)
