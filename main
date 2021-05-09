@@ -19,4 +19,4 @@ txt.close()
 espec_inter = interpolacion(espectro_txt) ### interpolamos nuestro espectro para tenerlo en las mismas
 espec_demeo = interpolacion_demeo(espec_inter)
 demeo_tax = disteuc_demeo(espec_demeo)
-b&b = disteuc_b&b(espec_inter)
+b&b_tax = disteuc_b&b(espec_inter)
