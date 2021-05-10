@@ -1,20 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 29 00:06:32 2019
+
+@author: Enrique Buendia
+"""
+
 import pandas as pd
 from scipy.interpolate import interp1d ###                                           
 import numpy as np
 from os import path
+from astropy.convolution import Gaussian1DKernel, convolve
 
 script_dir = path.dirname(__file__) #<-- absolute dir the script is in
 
 ### Función para interpolar el espectro de nuestro asteroide ###
 
-def interpolacion(espec):### Debemos proporcionar el espectro en formato pandas
+def interpolacion(espec, smooth):### Debemos proporcionar el espectro en formato pandas
 				                 ### en la primera columna debe de estar el flujo y en la segunda la longitud de onda que debe 
-                         ### estar en nanometro 
-    flujo = espectro_txt.iloc[:,1];flujo = flujo.to_numpy() ### cargam
-    LO = espectro_txt.iloc[:,0];LO = LO.to_numpy() ### cargam
-    interpolacion = interp1d(LO, flujo, fill_value='extrapolate') ### interpolación lineal
+                                 ### estar en nanometro 
+    flujo = espec.iloc[:,1];flujo = flujo.to_numpy() ### cargam
+    LO = espec.iloc[:,0];LO = LO.to_numpy() ### cargam
+    
+    newLO = []; flux = []
+    for n in range(len(LO)):
+        if LO[n] > 4200 and LO[n] < 9400:
+            newLO.append(LO[n]/10000)
+            flux.append(flujo[n])
+    flux = np.asarray(flux); newLO = np.asarray(newLO)
     LOC = np.linspace(0.44, 0.92, 49) ### Longitudes de onda en la que queremos interpolar, son 49 puntos entre 4400 y 9200 
-    fluxinter = interpolacion(LOC) ### 49 Flujos evaluados en las longitudes de onda que definimos antes 
+    
+    if smooth == True:
+        suav = convolve(flux,Gaussian1DKernel(stddev=1))
+        interpolacion = interp1d(newLO, suav, fill_value='extrapolate') ### interpolación lineal
+        fluxinter = interpolacion(LOC) ### 49 Flujos evaluados en las longitudes de onda que definimos antes 
+    else:
+        interpolacion = interp1d(newLO, flux, fill_value='extrapolate') ### interpolación lineal
+        fluxinter = interpolacion(LOC) ### 49 Flujos evaluados en las longitudes de onda que definimos antes 
+    
     return fluxinter ### Regresa el flujo interpolado para 49 puntos en formato numpy
     
 def interpolacion_demeo(espec_inter):
@@ -44,18 +66,20 @@ def disteuc_demeo(flujo_evaluar):### Primero debemos proporcionar los flujos de 
     demeo_sort = np.array(demeo_sort[0:10])
     return Distancia, demeo_sort, tax_demeo[demeo_index[0][0]]
     
-def disteuc_b&b(espec_evaluar):
+def disteuc_bus(espec_evaluar):
     smass1367 = pd.read_csv('tabla_smass.csv', header=0, sep=",")
     clasificacion = smass1367.iloc[:,49];clasificacion = clasificacion.to_numpy() ### Leemos la columna que contiene las clasificaciones del SMASSII
     flujo= smass1367.iloc[:,:-1]; flujo = flujo.to_numpy() ### Se lee los flujos de la base SMASSII-E
     cuadrado = np.zeros(flujo.shape)
-		distancias = np.zeros(1367)
+    distancias = np.zeros(1367)
     for fila in range(1367):
-				for columna in range(49):
-						cuadrado[fila,columna] = np.power((espec_evaluar[columna]-flujo[fila,columna]),2)
-				distancias[fila] = np.sqrt(np.sum(cuadrado[fila]))
-		menores_indices=np.argsort(distancias)
-		return distancias, menores_indices
+        for columna in range(49):
+            cuadrado[fila,columna] = np.power((espec_evaluar[columna]-flujo[fila,columna]),2)
+        distancias[fila] = np.sqrt(np.sum(cuadrado[fila]))
+    menores_indices=np.argsort(distancias)
+    distancias=np.sort(distancias)
+    taxos = []
+    for n in range(100):
+        taxos.append(clasificacion[menores_indices[n]])
+    return distancias, taxos
 		
-
-    
