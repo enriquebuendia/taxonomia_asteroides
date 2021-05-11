@@ -34,7 +34,7 @@ python main.py espectro_1.txt --smooth --nanometros
 ```
 
 donde:
-+ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å. Son admitidos los formatos de archivo _.txt_ y _.csv_. Los delimitadores deben ser espacios en blaco. Los archivos no deben contener encabezados. Los valores deben es tipo flotante. 
++ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å. Son admitidos los formatos de archivo _.txt_ y _.csv_. Los delimitadores deben ser espacios en blanco. Los archivos no deben contener encabezados y los valores deben es tipo flotante. 
 + **--smooth.** Bandera que debe ser activada si su espectro no ha sido suavizado previamente por un spline cúbico.
 + **--nanometros.** Por defecto, se espera que el archivo de entrada cuente con la longitud de onda medida en Angstroms, sin embargo, en caso de que el archivo se encuentre detallado en nanometros debe activarse esta bandera.
 
