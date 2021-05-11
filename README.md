@@ -17,7 +17,7 @@ donde:
 + **--smooth.** Bandera que debe ser activada si su espectro no ha sido suavizado, previamente, por un spline cúbico.
 + **--nanometros.** Por defecto, se espera que el archivo de entrada cuente con la longitud de onda medida en Angstroms, sin embargo, en caso de que el archivo se encuentre calibrado en nanometros debe activarse esta bandera.
 
-Otros parámetros puede ser encontrados dentro de la ayuda proporcionada dentro del mismo script.
+Otros parámetros pueden ser encontrados dentro de la ayuda proporcionada dentro del mismo script.
 
 ### **Cita**
 
