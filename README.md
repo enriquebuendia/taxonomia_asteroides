@@ -14,6 +14,8 @@ taxonomia_asteroides-main
 |   main.py
 |   tabla_smass.csv
 |   tools.py
+|   README.md
+|   requsitos.txt
 |
 |___espectro_txt
     |   espectro_1.txt
