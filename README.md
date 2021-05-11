@@ -20,7 +20,7 @@ Otros parámetros puede ser encontrados dentro de la ayuda proporcionada dentro 
 
 ### **Cita**
 
-Si usted cuenta útil este programa para su investigación, pude citarme como:
+Si usted cuenta útil este trabajo para su investigación, puede citarse como:
 ```
 @mastersthesis{buendia2021taxo,
   title={Clasificación taxonómica de asteroides de la familia Flora},
@@ -29,3 +29,6 @@ Si usted cuenta útil este programa para su investigación, pude citarme como:
   year={2021}
 }
 ```
+### Preguntas o comentarios ###
+
+Siéntase libre de realizar cualquier comentario o pregunta a través de este repositorio o por medio del correo electrónico: _enriquebuendiav@gmail.com_  
