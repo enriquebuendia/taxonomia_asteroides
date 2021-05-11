@@ -10,12 +10,14 @@ El script _main.py_ está diseñado para trabajar dentro de una terminal que se 
 La estructura del directorio debe verse de la siguiente forma:
 ```
 taxonomia_asteroides-main
-|   busdemeo-meanspectra.xlsx
 |   main.py
-|   tabla_smass.csv
 |   tools.py
 |   README.md
 |   requsitos.txt
+|
+|___data
+|   busdemeo-meanspectra.xlsx
+|   tabla_smass.csv
 |
 |___espectro_txt
     |   espectro_1.txt
