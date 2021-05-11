@@ -5,9 +5,9 @@ Este script sólo muestra las taxonomías correspondientes a las 10 menores dist
 
 ### **Ejecución por Interfaz de Líneas de Comando (CLI)**
 
-El script _main.py_ está diseñado para trabajar dentro de una terminal que se encuentre direccionado a la misma carpeta donde se descomprimio el script. Dentro de la carpeta de ejecución debe existir una subcarpeta con nombre **_espectros_txt_** donde se debe encontrar el archivo que contiene el espectro del asteroide de interés. 
+El script _main.py_ está diseñado para trabajar dentro de una terminal que se encuentre direccionada a la misma carpeta donde se descomprimio el script. Dentro de la carpeta de ejecución debe existir una subcarpeta con nombre: **_espectros_txt_**, donde se debe encontrar el archivo que contiene el espectro del asteroide de interés. 
 
-La estructura de los directorios debe verse de la siguiente forma:
+La estructura del directorio debe verse de la siguiente forma:
 ```
 taxonomia_asteroides-main
 |   busdemeo-meanspectra.xlsx
@@ -34,7 +34,7 @@ python main.py espectro_1.txt --smooth --nanometros
 ```
 
 donde:
-+ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene el espectro a analizar, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å.
++ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å.
 + **--smooth.** Bandera que debe ser activada si su espectro no ha sido suavizado previamente por un spline cúbico.
 + **--nanometros.** Por defecto, se espera que el archivo de entrada cuente con la longitud de onda medida en Angstroms, sin embargo, en caso de que el archivo se encuentre detallado en nanometros debe activarse esta bandera.
 
