@@ -1,5 +1,6 @@
 # Clasificación taxonómica de asteroides
-Repositorio para clasificar taxonómicamente asteroides con base a su espectros de reflectancia en el rango de longitudes de onda de 4400 - 9200 Å, utilizando las taxonomías de Bus &amp; Binzel (2002a, 2002b) y Bus-DeMeo (2009). Este script sólo muestra las taxonomías correspondientes a las 10 menores distancias espectrales calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para mas información consulte el archivo pdf anexo).    
+Repositorio para clasificar taxonómicamente asteroides con base a sus espectros de reflectancia en el rango de longitudes de onda de 4400-9200 Å, utilizando las taxonomías de Bus &amp; Binzel (2002a, 2002b) y Bus-DeMeo (2009). 
+Este script sólo muestra las taxonomías correspondientes a las 10 menores distancias espectrales calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para mas información consulte el archivo pdf anexo).    
 
 ### **Ejecución por Interfaz de Líneas de Comando (CLI)**
 
