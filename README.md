@@ -20,27 +20,23 @@ taxonomia_asteroides-main
 |   tabla_smass.csv
 |
 |___espectro_txt
-    |   espectro_1.txt
-    |   espectro_2.txt
-    |   
-    .
-    .
-    .
-    |   espectro_n.txt
+    |   a099942.hd078538_03_10.txt
 ```
 
 Para ejecutar el programa, una línea de comando típica puede verse así:
 
 ```python
-python main.py espectro_1.txt --smooth --nanometros
+python main.py nombre_archivo --smooth --nanometros
 ```
 
 donde:
-+ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å. Son admitidos los formatos de archivo _.txt_ y _.csv_. Los delimitadores deben ser espacios en blanco. Los archivos no deben contener encabezados y los valores deben es tipo flotante. 
++ **nombre_archivo** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual, debe de contener en su primera columna la longitud de onda, y en la segunda el flujo normalizado a 5500 Å. Son admitidos los formatos de archivo _.txt_ y _.csv_. Los delimitadores deben ser espacios en blanco. Los archivos no deben contener encabezados y los valores deben es tipo flotante (veasé [archivo de referencia]() )  
 + **--smooth.** Bandera que debe ser activada si su espectro no ha sido suavizado previamente por un spline cúbico.
 + **--nanometros.** Por defecto, se espera que el archivo de entrada cuente con la longitud de onda medida en Angstroms, sin embargo, en caso de que el archivo se encuentre detallado en nanometros debe activarse esta bandera.
 
 Otros parámetros pueden ser encontrados dentro de la ayuda proporcionada dentro del mismo script.
+
+Se ha adjuntado un archivo con nombre: [a099942.hd078538_03_10.txt]() el cual es un ejemplo que contiene las características necesarias para que el programa sea ejecutado satisfactoriamente. Este espectro no ha sido suavizado y sus longitudes de onda se encuentran descritas en Angstroms.  
 
 Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 LTS_) y MacOS () y bajo las librerias y versiones especificadas en el archivo [requisitos.txt](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt). 
 
