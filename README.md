@@ -1,7 +1,7 @@
 # Clasificación taxonómica de asteroides
 Repositorio para clasificar taxonómicamente asteroides con base a sus espectros de reflectancia en el rango de longitudes de onda de 4400-9200 Å, utilizando las taxonomías de Bus &amp; Binzel y Bus-DeMeo. 
 
-Este script sólo muestra las taxonomías correspondientes a las 10 menores distancias espectrales calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para mas información consulte el archivo pdf anexo), asi como también con los espectros promedios de la clasificación Bus-DeMeo.    
+Este script sólo muestra las taxonomías correspondientes a las 10 menores distancias espectrales calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para más información consulte el archivo pdf anexo), así también con los espectros promedios de la clasificación Bus-DeMeo.    
 
 ### **Ejecución por Interfaz de Líneas de Comando (CLI)**
 
@@ -34,7 +34,7 @@ python main.py espectro_1.txt --smooth --nanometros
 ```
 
 donde:
-+ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å.
++ **espectro_1.txt.** Debe ser remplazado por el nombre del archivo que contiene al espectro de interés, el cual debe de contener en su primera columna la longitud de onda y en la segunda el flujo normalizado a 5500 Å. Son admitidos los formatos de archivo _.txt_ y _.csv_ 
 + **--smooth.** Bandera que debe ser activada si su espectro no ha sido suavizado previamente por un spline cúbico.
 + **--nanometros.** Por defecto, se espera que el archivo de entrada cuente con la longitud de onda medida en Angstroms, sin embargo, en caso de que el archivo se encuentre detallado en nanometros debe activarse esta bandera.
 
