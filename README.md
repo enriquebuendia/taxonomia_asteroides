@@ -38,11 +38,11 @@ donde:
 
 Otros parámetros pueden ser encontrados dentro de la ayuda proporcionada dentro del mismo script.
 
-Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 LTS_) y MacOS () y bajo las librerias y versiones especificadas en el archivo [requisitos.txt](). 
+Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 LTS_) y MacOS () y bajo las librerias y versiones especificadas en el archivo [requisitos.txt](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt). 
 
 ### **Cita**
 
-Si usted cuenta útil este trabajo para su investigación, puede citarse como:
+Si usted encuentra útil este trabajo para su investigación, puede citarse como:
 ```
 @mastersthesis{buendia2021,
   title={Clasificación taxonómica de asteroides de la familia Flora},
