@@ -42,7 +42,7 @@ Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 
 
 #### **Archivos de salida**
 
-Este programa puede proporcionar un archivo .txt con la información de las tres clasificaciones propuestas para los valores de 10, 30 y 50 menores distancias "espectrales". Además, si lo desea, se pueden proporcionar las efemérides: RA, DEC, delta_v, r, fase y V. Nótese que de forma predeterminada estas efemerides son calculadas para el Observatorio Astrofísico Guillermo Haro (OAGH), por lo tanto, para especificar otra ubcación se debe modificar la matriz de localización del observador ubicada en la función [coordenadas2](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt) (Para mayor información  consulte la documentación de [astroquery](https://astroquery.readthedocs.io/en/latest/mpc/mpc.html)).
+Este programa puede proporcionar un archivo .txt con la información de las tres clasificaciones propuestas para los valores de **10**, **30** y **50** menores distancias "espectrales". Además, si lo desea, se pueden proporcionar las efemérides: _RA, DEC, delta_v, r, fase y V_. Nótese que de forma predeterminada estas efemerides son calculadas para el Observatorio Astrofísico Guillermo Haro (OAGH), por lo tanto, para especificar otra ubicación geográfica se debe modificar la matriz de localización del observador ubicada en la función _coordenadas2_ que se localiza dentro de [achivos.py](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/archivos.py) (Para mayor información  consulte la documentación de [astroquery](https://astroquery.readthedocs.io/en/latest/mpc/mpc.html)).
       
 
 ### **Cita**
