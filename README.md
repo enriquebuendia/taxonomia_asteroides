@@ -38,7 +38,12 @@ Otros parámetros pueden ser encontrados dentro de la ayuda proporcionada dentro
 
 Se ha adjuntado un archivo con nombre: [a099942.hd078538_03_10.txt](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/espectro_txt/a099942.hd078538_03_10.txt), el cual es un ejemplo que contiene las características necesarias para que el programa sea ejecutado satisfactoriamente. Este espectro no ha sido suavizado y sus longitudes de onda se encuentran  en Angstroms.  
 
-Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 LTS_) y MacOS () y bajo las librerias y versiones especificadas en el archivo [requisitos.txt](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt). 
+Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 LTS_) y MacOS () y bajo las librerias y versiones especificadas en el archivo [requisitos.txt](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt).
+
+#### **Archivos de salida**
+
+Este programa puede proporcionar un archivo .txt con la información de las tres clasificaciones propuestas para los valores de 10, 30 y 50 menores distancias "espectrales". Además, si lo desea, se pueden proporcionar las efemérides: RA, DEC, delta_v, r, fase y V. Nótese que de forma predeterminada estas efemerides son calculadas para el Observatorio Astrofísico Guillermo Haro (OAGH), por lo tanto, para especificar otra ubcación se debe modificar la matriz de localización del observador ubicada en la función [coordenadas2](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/requisitos.txt) (Para mayor información  consulte la documentación de [astroquery](https://astroquery.readthedocs.io/en/latest/mpc/mpc.html)).
+      
 
 ### **Cita**
 
