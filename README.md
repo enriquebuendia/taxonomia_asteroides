@@ -1,26 +1,30 @@
 # Clasificación taxonómica de asteroides
 Repositorio para clasificar taxonómicamente asteroides con base a sus espectros de reflectancia en el rango de longitudes de onda de 4400-9200 Å, utilizando las taxonomías de Bus &amp; Binzel y Bus-DeMeo. 
 
-Este script sólo muestra las taxonomías correspondientes a las 10 menores distancias espectrales calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para más información consulte el archivo pdf anexo), así también con los espectros promedios de la clasificación Bus-DeMeo.    
+Este script muestra las taxonomías correspondientes a las 10, 30 y 50 menores _distancias espectrales_ calculadas al emparejar el espectro de interés y la base de datos SMASSII-E (para más información consulte el archivo pdf anexo), así también, con los espectros promedios de la clasificación Bus-DeMeo.    
 
 ### **Ejecución por Interfaz de Líneas de Comando (CLI)**
 
 El script _main.py_ está diseñado para trabajar dentro de una terminal que se encuentre direccionada a la misma carpeta donde se descomprimio el script. Dentro de la carpeta de ejecución debe existir una subcarpeta con nombre: **_espectros_txt_**, donde se debe encontrar el archivo que contiene el espectro del asteroide de interés. 
 
-La estructura del directorio debe verse de la siguiente forma:
+La estructura del directorio debe verse similar a la siguiente forma:
 ```
 taxonomia_asteroides-main
+|   archivos.py
 |   main.py
 |   tools.py
 |   README.md
 |   requsitos.txt
 |
-|___data
+|___/data
 |       busdemeo-meanspectra.xlsx
 |       tabla_smass.csv
 |
-|___espectro_txt
-    |   a099942.hd078538_03_10.txt
+|___/espectro_txt
+|      a099942.hd078538_03_10.txt
+|
+|___/output
+|      sumary_a099942.hd078538_03_10.txt
 ```
 
 Para ejecutar el programa, una línea de comando típica puede verse así:
@@ -42,7 +46,7 @@ Este programa ha sido probado en los sistemas operativos Linux (_Ubuntu 20.04.2 
 
 #### **Archivos de salida**
 
-Este programa puede proporcionar un archivo .txt con la información de las tres clasificaciones propuestas para los valores de **10**, **30** y **50** menores distancias "espectrales". Además, si lo desea, se pueden proporcionar las efemérides: _RA, DEC, delta_v, r, fase y V_. Nótese que de forma predeterminada estas efemerides son calculadas para el Observatorio Astrofísico Guillermo Haro (OAGH), por lo tanto, para especificar otra ubicación geográfica se debe modificar la matriz de localización del observador ubicada en la función _coordenadas2_ que se localiza dentro de [achivos.py](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/archivos.py) (Para mayor información  consulte la documentación de [astroquery](https://astroquery.readthedocs.io/en/latest/mpc/mpc.html)).
+Este programa puede proporcionar un archivo .txt con la información de las tres clasificaciones propuestas para los valores de **10**, **30** y **50** menores distancias "espectrales". Además, si lo desea, se pueden proporcionar las efemérides: _RA, DEC, delta_v, r, fase y V_. Nótese que de forma predeterminada estas efemerides son calculadas para el Observatorio Astrofísico Guillermo Haro (OAGH), por lo tanto, para especificar otra ubicación geográfica se debe modificar la matriz de localización del observador ubicada en la función _coordenadas2_ que se localiza dentro de [achivos.py](https://github.com/enriquebuendia/taxonomia_asteroides/blob/main/archivos.py) (Para mayor información  consulte la documentación de [astroquery](https://astroquery.readthedocs.io/en/latest/mpc/mpc.html)). Todos los archivos de resumen se podrán encontra dentro de la carpeta [output]()
       
 
 ### **Cita**
