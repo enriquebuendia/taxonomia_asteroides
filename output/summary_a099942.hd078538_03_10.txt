@@ -1,0 +1,7 @@
+# Programa: Clasificación Taxonómica de Asteroides 
+# Autor: Luis Enrique Buendia Verdiguel
+# Archivo: a099942.hd078538_03_10.txt
+# Fecha de creación: 2021-07-13
+# Taxonomía propuesta con k= 10: S con FP 1.00
+# Taxonomía propuesta con k= 30: S con FP 1.00
+# Taxonomía propuesta con k= 50: S con FP 1.00
