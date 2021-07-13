@@ -1,0 +1,9 @@
+name: tax-ast-env
+
+dependencies:
+- pandas=1.1.3
+- tabulate=0.8.9
+- numpy=1.19.2
+- scipy=1.5.2
+- astropy=4.0.2
+- python=3.6
