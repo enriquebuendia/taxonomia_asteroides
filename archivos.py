@@ -7,10 +7,11 @@ Created on Sun May 16 16:03:55 2021
 """
 
 from astroquery.mpc import MPC
-from os import path
 from datetime import date
-def crea_res(archivo, FP):   
-    abs_file_path = path.join('out/' + 'sumary_' + archivo)
+from os import path
+
+def crea_res(archivo, FP):
+    abs_file_path = path.join('output', 'summary_' + archivo)
     fecha=date.today()
     txt = open(abs_file_path,'w')
     txt.write(
