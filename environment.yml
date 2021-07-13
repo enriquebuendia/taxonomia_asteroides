@@ -7,3 +7,4 @@ dependencies:
 - scipy=1.5.2
 - astropy=4.0.2
 - python=3.6
+- astroquery=0.4.3
