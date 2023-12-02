@@ -15,12 +15,12 @@ script_dir = path.dirname(__file__) #<-- absolute dir the script is in
 
 ### Función para interpolar el espectro de nuestro asteroide ###
 
-def interpolacion(espec, smooth, nm):### Debemos proporcionar el espectro en formato pandas
+def interpolacion(espec, smooth, micro):### Debemos proporcionar el espectro en formato pandas
 				                 ### en la primera columna debe de estar el flujo y en la segunda la longitud de onda que debe 
                                  ### estar en nanometro 
     flujo = espec.iloc[:,1];flujo = flujo.to_numpy() ### cargam
     LO = espec.iloc[:,0];LO = LO.to_numpy() ### cargam
-    if nm == True:
+    if micro == True:
         LO = LO*10000
     newLO = []; flux = []
     for n in range(len(LO)):
