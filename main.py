@@ -18,8 +18,8 @@ my_parser.add_argument('txt',
 my_parser.add_argument("--smooth", 
                        help="Bandera para activar el suavizado mediante un spline3",
                     action="store_true")
-my_parser.add_argument("--nanometros", 
-                       help="Si la longitud de onda de su archivo esta en en nonometros, activar esta bandera",
+my_parser.add_argument("--micrometros", 
+                       help="Si la longitud de onda de su archivo esta en en micrometros, activar esta bandera",
                     action="store_true")
 args = my_parser.parse_args()
 archivo = args.txt
@@ -33,12 +33,12 @@ txt = open(abs_file_path,'r')
 espectro_txt = pd.read_csv(txt,header=None,delim_whitespace=True) ### El archivo no debe tener encabezados, y el delimitador debe se espacio en blanco
 txt.close()
 #%% Llamada de funciones aux
-smooth = False; nm = False
+smooth = False; micro = False
 if args.smooth:
     print("Se ha realizado un suavizado mediante un spline de tercer orden")
     smooth = True
-if args.nanometros:
-    nm = True
+if args.micrometros:
+    micro = True
 espec_inter = tools.interpolacion(espectro_txt, smooth, nm) ### interpolamos nuestro espectro para tenerlo en las mismas
 espec_demeo = tools.interpolacion_demeo(espec_inter)
 demeo_tax = tools.disteuc_demeo(espec_demeo)
