@@ -39,7 +39,7 @@ if args.smooth:
     smooth = True
 if args.micrometros:
     micro = True
-espec_inter = tools.interpolacion(espectro_txt, smooth, nm) ### interpolamos nuestro espectro para tenerlo en las mismas
+espec_inter = tools.interpolacion(espectro_txt, smooth, micro) ### interpolamos nuestro espectro para tenerlo en las mismas
 espec_demeo = tools.interpolacion_demeo(espec_inter)
 demeo_tax = tools.disteuc_demeo(espec_demeo)
 bus_tax = tools.disteuc_bus(espec_inter)
