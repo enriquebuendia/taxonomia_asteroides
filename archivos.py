@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Sun May 16 16:03:55 2021
@@ -10,13 +9,13 @@ from astroquery.mpc import MPC
 from datetime import date
 from os import path
 
-def crea_res(archivo, FP):
+def crea_res(archivo, FP, KNN, PCA, NCA):
     abs_file_path = path.join('output', 'summary_' + archivo)
     fecha=date.today()
     txt = open(abs_file_path,'w')
     txt.write(
         '# Programa: Clasificación Taxonómica de Asteroides ' +
-        '\n# Autor: Luis Enrique Buendia Verdiguel' +
+        '\n# Autor: Enrique Buendia-Verdiguel' +
         '\n# Archivo: {}'.format(archivo) + 
         '\n# Fecha de creación: ' + str(fecha) + 
         '\n# Taxonomía propuesta con k= 10: {} con FP {:.2f}' 
@@ -24,9 +23,9 @@ def crea_res(archivo, FP):
         '\n# Taxonomía propuesta con k= 30: {} con FP {:.2f}'
           .format(FP[1][0],FP[1][1])+
         '\n# Taxonomía propuesta con k= 50: {} con FP {:.2f}'
-          .format(FP[2][0],FP[2][1])
+          .format(FP[2][0],FP[2][1])     
               )            
-    coor = input('\n ¿Desea obtener las efemérides de su objeto? \n Teclee S para si o cualquier otra tecla para no: ')
+    coor = input('\n ¿Desea obtener las efemérides de su objeto? \n Teclee Si para si o cualquier otra tecla para no: ')
     if coor == 'S' or coor == 'Si' or coor == 'si' or coor == 'SI' or coor == 's':
         coordenadas = coordenadas2()
         txt.write(
