@@ -59,7 +59,7 @@ tabla = pd.DataFrame(data = d)
 print('')
 print(tabulate(tabla, headers=['Bus - DeMeo','Bus & Binzel', 'Dist Euc (B&B)'], showindex=False))
 taxos_list=[]
-for n in [10]:
+for n in [10,20,30]:
     taxo_prop, pesos = tools.datos(bus_tax[1], n)
     taxos_list.append(tools.datos(bus_tax[1], n))
     peso_mayor=pesos[np.argmax(pesos)]/np.sum(pesos)
