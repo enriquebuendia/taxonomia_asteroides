@@ -10,7 +10,7 @@ from scipy.interpolate import interp1d ###
 import numpy as np
 from os import path
 from scipy.signal import savgol_filter
-#from sklearn import model_selection, neighbors, metrics, pipeline, preprocessing
+from sklearn import model_selection, neighbors, metrics, pipeline, preprocessing
 import pickle
 import rocks
 import matplotlib.pyplot as plt
@@ -119,11 +119,11 @@ def KNN(espec_inter):
     # load the PCA from disk
     pca_reload = pickle.load(open("data/PCA",'rb'))
     espec_pca=pca_reload.transform(espec_inter)
-
+    print(espec_pca)
     # load the NCA from disk
     nca_reload = pickle.load(open("data/NCA",'rb'))
     espec_nca=nca_reload.transform(espec_inter)
-    
+    print(espec_nca)
     # load the model knn from disk
     knn_reload = pickle.load(open("data/knnoriginal",'rb'))
     knn_predic=knn_reload.predict_proba(espec_inter)

@@ -8,7 +8,7 @@ import tools
 import pandas as pd
 import argparse, os, sys
 from tabulate import tabulate
-#import archivos
+import archivos
 import numpy as np
 
 #%% Parte del CDM
@@ -59,12 +59,13 @@ tabla = pd.DataFrame(data = d)
 print('')
 print(tabulate(tabla, headers=['Bus - DeMeo','Bus & Binzel', 'Dist Euc (B&B)'], showindex=False))
 taxos_list=[]
-for n in [10,20,30]:
+for n in [10]:
     taxo_prop, pesos = tools.datos(bus_tax[1], n)
     taxos_list.append(tools.datos(bus_tax[1], n))
     peso_mayor=pesos[np.argmax(pesos)]/np.sum(pesos)
-    print('\nFunciones de peso por clases: \n{}'.format({tax:wf for tax,wf in zip(taxo_prop, pesos/np.sum(pesos))}))
-    print("\nTaxonomía propuesta para k = {}: {} con función de peso de {:2f}".format(n, taxo_prop[np.argmax(pesos)], peso_mayor))
+    print(taxo_prop, pesos/np.sum(pesos))
+    #print(taxos_prop[1]/np.sum(taxos_prop[1]))
+    print("\n Taxonomía propuesta para k = {}: {} con función de peso de {:2f}".format(n, taxo_prop[np.argmax(pesos)], peso_mayor))
 print('\nProbabilidades de tipos para el KNN original')
 #%%Crear tabla (DataFrame)
 #probas=np.array(proba,dtype=[('S','<i4'),('C','<i4'),('X','<i4'),('PS','<i4'),('NS','<i4')])
